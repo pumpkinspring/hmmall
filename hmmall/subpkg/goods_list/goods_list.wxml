@@ -1,0 +1,8 @@
+<!--subpkg/goods_list/goods_list.wxml-->
+<view class="goods-list">
+  <!-- 商品 start -->
+  <view class="goods-item" wx:for="{{goodsList}}" wx:key="goods_id" bindtap="gotoGoodsDetail" data-goods_id="{{item.goods_id}}">
+    <goods item="{{item}}"></goods>
+  </view>
+  <!-- 商品 end -->
+</view>

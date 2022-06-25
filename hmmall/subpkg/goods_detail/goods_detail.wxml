@@ -1,0 +1,43 @@
+<!--subpkg/goods_detail/goods_detail.wxml-->
+<view class="goods-detail">
+  <!-- 轮播图 start -->
+  <swiper class="detail-swiper-view" indicator-dots circular autoplay>
+    <swiper-item wx:for="{{goods_info.pics}}" wx:key="pics_id">
+      <image class="detail-swiper-image" src="{{ item.pics_mid }}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 轮播图 end -->
+</view>
+  <!-- 商品信息 start -->
+  <view class="goods-info-box">
+    <view class="price">￥{{ goods_info.goods_price }}</view>
+    <view class="goods-info-body">
+      <view class="goods-name">{{ goods_info.goods_name }}</view>
+      <view class="collection" bindtap="addToCollect">
+        <image class="collection-icon" src="/static/icons/shoucang.png"></image>
+        <text class="collection-text">收藏</text>
+      </view>
+    </view>
+    <view class="expenses-text">快递：免运费</view>
+  </view>
+  <!-- 商品信息 end -->
+  <!-- 商品详情信息 图片展示 -->
+<rich-text nodes="{{ goods_info.goods_introduce }}"></rich-text>
+<!-- 加入购物车 start  -->
+<view class="add-cart-box">
+  <view class="cart-box">
+    <view class="cart-box-item">
+      <image class="cart-box-item-img" src="/static/icons/shop.png"></image>
+      <text class="cart-box-item-text">店铺</text>
+    </view>
+    <view class="cart-box-item" bindtap="gotoCart">
+      <image class="cart-box-item-img" src="/static/icons/shopping-cart-alt.png"></image>
+      <text class="cart-box-item-text">购物车</text>
+    </view>
+  </view>
+  <view class="add-box">
+    <view class="add-box-item" bindtap="addToCart">加入购物车</view>
+    <view class="add-box-item" bindtap="gotoOrderOne">立即购买</view>
+  </view>
+</view>
+<!-- 加入购物车 end  -->

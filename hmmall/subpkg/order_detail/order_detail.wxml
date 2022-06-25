@@ -1,0 +1,30 @@
+<!--subpkg/order_detail.wxml-->
+<view class="user_content">
+<view class="user_main">
+  <view class="app_info_wrap">
+<view>
+  订单号：{{orderInfo.orderId}} 
+</view>
+<view>
+<view>订单生成时间：{{orderInfo.orderTime}}</view>
+<view>订单状态：{{orderInfo.orderStatus}}</view>
+<view>订单商品信息：
+  <view>--------------------------------------</view>
+      <view wx:for="{{orderInfo.list}}" wx:key="index">
+      <view>商品名称：{{item.goodsName}} </view>
+     <view>商品数量：{{item.goodsNum}}</view>
+      <view>商品单价：{{item.goodsPrice}}</view>
+      <view>--------------------------------------</view>
+      </view>
+</view>
+<view>支付金额：{{orderInfo.orderPrice}}</view>
+<view>收货地址：{{orderInfo.orderAddress}}</view>
+<view>收件人姓名：{{orderInfo.orderName}}</view>
+<view>收件人电话：{{orderInfo.orderPhone}}</view>
+</view>
+</view>
+<view>
+  <button type="warn" bindtap="deleteorder" size="default">删除订单</button>
+</view>
+</view>
+</view>

@@ -1,0 +1,39 @@
+/* pages/home/home.wxss */
+.swiper-list{
+  width: 750rpx;
+  height: 340rpx;
+}
+.swiper-list image{
+  width: 750rpx;
+  height: 340rpx;
+}
+/* 导航菜单 start */
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+.nav-list .nav-item {
+  width: 128rpx;
+  height: 140rpx;
+}
+.nav-list .nav-img {
+  width: 100%;
+  height: 100%;
+}
+/* 导航菜单 end */ 
+/* 楼层 start */
+.floor-list .floor-item .floor-title-img {
+  width: 750rpx;
+  height: 59rpx;
+}
+.floor-img-box {
+  display: flex;
+  padding-left: 10rpx;
+}
+.right-img-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/* 楼层 end */

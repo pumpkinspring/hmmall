@@ -1,0 +1,47 @@
+<!--pages/cart/cart.wxml-->
+<!-- 获取收货地址 -->
+<view class="cityAll">
+  <view class="city" wx:if="{{!address}}">
+    <view class="addCity" bindtap="addCity" >+添加收货地址</view>
+  </view>
+  <view wx:else class="user">
+    <view class="userComment">
+      <view class="name">姓名：{{address.userName}}</view>
+      <view class="phone">电话:{{address.telNumber}}</view>
+    </view>
+    <view class="userCity">地址:{{address.all}}</view>
+  </view>
+</view>
+<view>------------------------------------------------------</view>
+<!--获取收获地址end  -->
+
+<view class="goods-list">
+  <!-- 商品 start -->
+  <view class="goods-item" wx:for="{{cartList}}" wx:key="goodsId">
+    <cart_goods item="{{item}}" ></cart_goods>
+  </view>
+  <view>
+  
+  </view>
+  <!-- 商品 end -->
+
+  <!-- 加入购物车 start  -->
+<view class="add-cart-box">
+  <view class="cart-box">
+    总价格：<text class="price">{{sumPrice}}</text>
+    <!-- <view class="cart-box-item">
+      <image class="cart-box-item-img" src="/static/icons/shop.png"></image>
+      <text class="cart-box-item-text">店铺</text>
+    </view>
+    <view class="cart-box-item" bindtap="gotoCart">
+      <image class="cart-box-item-img" src="/static/icons/shopping-cart-alt.png"></image>
+      <text class="cart-box-item-text">购物车</text>
+    </view> -->
+  </view>
+  <view class="add-box">
+    
+    <view class="add-box-item" bindtap="gotoOrder">立即购买</view>
+  </view>
+</view>
+<!-- 立即购买 end  -->
+</view>

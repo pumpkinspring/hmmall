@@ -1,0 +1,74 @@
+/* pages/cate/cate.wxss */
+.cate {
+  height: 100vh;
+}
+.cate-container {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+/* 左侧区域 start */
+.scroll-view-left {
+  height: 100%;
+  width: 100px;
+}
+.left-item {
+  width: 100%;
+  line-height: 60px;
+  background-color: #f7f7f7;
+  text-align: center;
+  position: relative;
+  font-size: 12px;
+}
+.left-item.active {
+  background-color: #fff;
+}
+.left-item.active::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 30px;
+  background-color: #C00000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -15px;
+}
+/* 左侧区域 end */
+/* 修改样式 */
+
+
+
+/* 右侧区域 start */
+.scroll-view-right {
+  height: 100%;
+  width: calc(100vw - 100px);
+}
+.right-item-title{
+  font-size: 14px;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+}
+.right-item-icon-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right-item-icon {
+  width: 33.33%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+.right-item-icon-image {
+  width: 60px;
+  height: 60px;
+}
+.right-item-icon-text {
+  font-size: 12px;
+  line-height: 26px;
+}
+.price{
+  color: #C00000;
+}
+/* 右侧区域 end */

@@ -1,0 +1,10 @@
+<!--pages/payfail/payfail.wxml-->
+<text>pages/payfail/payfail.wxml</text>
+<button type="default" bindtap="getdata">获取数据</button>
+<button type="default" bindtap="setdata1">发送数据</button>
+<button type="default" bindtap="setdatas">批量发送</button>
+<button type="default" bindtap="add">cid+1</button>
+<button type="default" bindtap="zero">index清零</button>
+<view>
+cid:<input type="text" class="ipt" value="{{cid}}" bindtap="changecid" />
+</view>

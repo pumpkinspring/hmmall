@@ -1,0 +1,10 @@
+<!--components/search-bar/search-bar.wxml-->
+
+<view class="search-bar">
+<view class="search-bar-container">
+<icon type="search">
+</icon>
+<text>搜索
+</text>
+</view>
+</view>

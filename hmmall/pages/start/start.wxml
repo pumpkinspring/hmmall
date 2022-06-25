@@ -1,0 +1,6 @@
+<!--pages/start/start.wxml-->
+<view class="wapper">
+  <image src="/static/image/background.jpg"></image>
+  <button style="width:70%" bindtap="getUserProfile">授权登录</button>
+</view>
+                                                                                   

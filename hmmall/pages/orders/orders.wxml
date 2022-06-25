@@ -1,0 +1,23 @@
+<!--pages/orders/orders.wxml-->
+<!-- <text>pages/orders/orders.wxml</text>
+<view wx:for="{{orderList}}" wx:key="index">
+<view>
+  订单号：{{item.order_num}}
+</view>
+<view>
+  订单时间：{{item.order_time}}
+</view>
+<view>
+   订单金额：{{item.order_price}}
+</view>
+ <view>
+ ----------------------------------------
+ </view>
+</view> -->
+<view>
+<!-- 订单 start -->
+<view class="goods-item" wx:for="{{orderList}}" wx:key="orderId" bindtap="gotoOrderDetail" data-goods_id="{{item.orderId}}">
+    <orders item="{{item}}"></orders>
+  </view>
+  <!-- 订单 end -->
+</view>

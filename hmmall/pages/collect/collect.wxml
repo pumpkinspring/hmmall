@@ -1,0 +1,8 @@
+<!--pages/collect/collect.wxml-->
+<view class="goods-list">
+  <!-- 商品 start -->
+  <view class="goods-item" wx:for="{{collectList}}" wx:key="goods_id" bindtap="gotoGoodsDetail" data-goods_id="{{item.goods_id}}">
+    <collect_goods item="{{item}}"></collect_goods>
+  </view>
+</view>
+  

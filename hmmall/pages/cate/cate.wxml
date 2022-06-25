@@ -1,0 +1,26 @@
+<!--pages/cate/cate.wxml-->
+<view class="cate">
+  <search-bar></search-bar>
+<view class="cate-container">
+<!-- 左侧区域 start -->
+<scroll-view class="scroll-view-left" scroll-y>
+    <view class="left-item {{active==index?'active':''}}" wx:for="{{cateList}}" wx:key="cat_id" bindtap="changeActive" data-index="{{index}}">
+        {{ item.cat_name }}
+    </view>
+</scroll-view>
+<!-- 左侧区域 end -->
+ <!-- 右侧区域 start -->
+ <scroll-view class="scroll-view-right" scroll-y>
+      <view class="right-item" wx:for="{{cateLevel2}}" wx:key="cat_id">
+        <!-- <view class="right-item-title">/ {{item.cat_name}} /</view> -->
+        <view class="right-item-icon-box">
+          <view class="right-item-icon" wx:for="{{item.children}}" wx:key="index2" wx:for-item="item2" wx:for-index="index2" bindtap="gotoGoodsList" data-cid="{{item2.cat_id}}">
+            <image class="right-item-icon-image" src="{{item2.cat_icon}}"></image>
+            <view class="right-item-icon-text">{{item2.cat_name}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <!-- 右侧区域 end -->
+    </view>
+  </view>

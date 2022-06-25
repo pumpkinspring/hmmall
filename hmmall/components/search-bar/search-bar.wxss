@@ -1,0 +1,23 @@
+/* components/search-bar/search-bar.wxss */
+.search-bar{
+width: 100vw;
+height: 50px;
+background-color: #c00000;
+padding:0 10px;
+display: flex;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 10;
+}
+.search-bar-container{
+  height: 36px;
+   background-color: white;
+   width: 100%;
+   border-radius: 18px;
+    counter-reset: #333;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}

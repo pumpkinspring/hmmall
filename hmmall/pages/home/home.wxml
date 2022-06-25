@@ -1,0 +1,41 @@
+<!--pages/home/home.wxml-->
+<view>
+<search-bar>
+
+</search-bar>
+</view>
+<view>
+<!-- 轮播图 -->
+<swiper class="swiper-list" indicator-dots="true" circular="true" autoplay="true">
+  <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+    <image src="{{item.image_src}}"></image>
+  </swiper-item>
+</swiper>
+</view>
+ <!-- 导航菜单 start -->
+ <view class="nav-list">
+    <view class="nav-item" wx:for="{{navList}}" wx:key="index">
+      <image class="nav-img" src="{{ item.image_src }}" bindtap="navClickHandler" data-item="{{item}}"></image>
+    </view>
+  </view>
+  <!-- 导航菜单 end -->
+  <!-- 楼层 start -->
+<view class="floor-list">
+  <view class="floor-item" wx:for="{{floorList}}" wx:key="index">
+    <image class="floor-title-img" src="{{ item.floor_title.image_src}}"></image>
+	
+    <!-- 新增内容 start -->
+    <view class="floor-img-box">
+      <view class="left-img-box">
+        <image mode="widthFix" src="{{ item.product_list[0].image_src }}" style="{{ 'width:' + item.product_list[0].image_width + 'rpx' }}"></image>
+      </view>
+      <view class="right-img-box">
+        <view wx:for="{{item.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2" wx:if="{{index2 !== 0}}">
+          <image mode="widthFix" src="{{ item2.image_src }}" style="{{ 'width:' +  item2.image_width + 'rpx' }}"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 新增内容 end -->
+  </view>
+</view>
+<!-- 楼层 end -->

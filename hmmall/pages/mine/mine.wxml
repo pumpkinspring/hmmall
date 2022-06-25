@@ -1,0 +1,55 @@
+<!--pages/mine/mine.wxml-->
+<view class="main-back">
+<view class="top">
+<view class="userInfo">
+<!--显示名字-->
+<view class="nickName">{{userInfo.nickName}}</view>
+<view class="fontColor" style="font-size:26rpx;margin-top:10rpx">
+<view wx:if="{{isData}}">
+未登录
+<text class="register" bindtap="toRegister">注册账号</text>
+<text class="login" bindtap="toLogin">直接登录</text>
+</view>
+<view wx:else>
+已登录
+
+</view>
+</view>
+</view>
+<!--显示地址-->
+<image src="{{userInfo.avatarUrl}}"></image>
+</view>
+</view>
+
+
+<view class="user_content">
+  <view class="user_main">
+
+    <view class="app_info_wrap">
+      <view wx:if="{{isData}}">
+        <navigator url="/pages/login/login" class="app_info_item">立即登录</navigator>
+     
+    </view>
+    <view wx:else>
+      <navigator url="/pages/orders/orders" class="app_info_item">我的订单</navigator>
+      <navigator url="/pages/home/home" class="app_info_item">地址管理</navigator>
+      <navigator url="/pages/collect/collect" class="app_info_item">我的收藏</navigator>
+      <navigator url="/pages/home/home" class="app_info_item" bindtap="clearuserinfo">退出登录</navigator>
+    </view>
+    </view>
+
+    <view class="app_info_wrap">
+  <view class="app_info_item app_info_contact">
+        <text>联系客服</text>
+        <text>10068</text>
+      </view>
+      
+      <!-- <navigator url="/pages/home/home" class="app_info_item">地址管理</navigator>
+      <navigator url="/pages/home/home" class="app_info_item">我的钱包</navigator> -->
+    </view>
+     
+
+    
+  </view>
+  
+</view>

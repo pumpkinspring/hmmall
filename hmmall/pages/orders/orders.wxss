@@ -1,0 +1,10 @@
+/* pages/orders/orders.wxss */
+.left-item {
+  width: 100%;
+  line-height: 60px;
+  background-color: #f7f7f7;
+  text-align: center;
+  position: relative;
+  font-size: 12px;
+  
+}

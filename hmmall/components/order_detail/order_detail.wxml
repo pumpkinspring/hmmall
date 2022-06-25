@@ -1,0 +1,13 @@
+<!--components/order_detail.wxml-->
+<view class="goods-item" >
+  <view class="goods-item-left">
+    <image class="goods-pic" src="{{item.list[0].goodsSmallLogo || defaultPic}}"></image>
+  </view>
+  <view class="goods-item-right">
+    <view class="goods-name">订单编号：{{item.orderId}}</view>
+    <view class="goods-price">
+     订单总价 ：{{item.orderPrice}}
+    </view>
+    
+  </view>
+</view>

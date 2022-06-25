@@ -1,0 +1,4 @@
+/* pages/payfail/payfail.wxss */
+.ipt{
+    border: black solid 1px;
+}

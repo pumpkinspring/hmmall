@@ -1,0 +1,19 @@
+<!--components/cart_goods/cart_goods.wxml-->
+<view class="goods-item">
+  <view class="goods-item-left">
+    <image class="goods-pic" src="{{item.goodsSmallLogo || defaultPic}}"></image>
+  </view>
+  <view class="goods-item-right">
+    <view class="goods-name">{{item.goodsName}}</view>
+    <view class="goods-price">
+      {{item.goodsPrice}}
+    </view>
+    <view class="good-num">
+      
+      <text>数量：</text> 
+      <input type="number" bindinput="changeNum" value="{{item.goodsNum}}" />
+      <button type="default" bindtap="changeNumto" size="mini">确定</button>
+      <button type="default" bindtap="deletecart" size="mini">删除</button>
+    </view>
+  </view>
+</view>

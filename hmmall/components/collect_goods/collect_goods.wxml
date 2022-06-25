@@ -1,0 +1,12 @@
+<!--components/collect_goods/collect_goods.wxml-->
+<view class="goods-item">
+  <view class="goods-item-left">
+    <image class="goods-pic" src="{{item.goods_small_logo || defaultPic}}"></image>
+  </view>
+  <view class="goods-item-right">
+    <view class="goods-name">{{item.goods_name}}</view>
+    <view class="goods-price">
+      ￥{{item.goods_price}}
+    </view>
+  </view>
+</view>
