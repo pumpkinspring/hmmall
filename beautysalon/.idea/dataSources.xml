@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="meirong@localhost" uuid="be5b99e0-253f-45ae-9c19-ef3dcf3e3d83">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/meirong</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@localhost" uuid="9f161997-a18c-4d34-8696-b217a95dddf3">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="mybtdb@43.138.218.145" uuid="211856ec-e0d0-406f-be10-e50f4871ece9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://43.138.218.145:3306/mybtdb</jdbc-url>
+    </data-source>
+  </component>
+</project>
