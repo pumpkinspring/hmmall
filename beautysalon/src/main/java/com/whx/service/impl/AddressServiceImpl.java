@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Address)表服务实现类
@@ -78,5 +79,15 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public boolean deleteById(Integer id) {
         return this.addressDao.deleteById(id) > 0;
+    }
+    /*
+    * 根据用户id查询用户地址
+    *
+    * */
+
+    @Override
+    public List<Address> queryAddressByUserId(Long userId) {
+
+        return addressDao.queryByUserId(userId);
     }
 }

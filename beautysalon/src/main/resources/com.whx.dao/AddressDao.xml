@@ -6,14 +6,14 @@
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="userId" column="user_id" jdbcType="INTEGER"/>
         <result property="address" column="address" jdbcType="VARCHAR"/>
-        <result property="name" column="name" jdbcType="VARCHAR"/>
-        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="name" column="add_name" jdbcType="VARCHAR"/>
+        <result property="phone" column="add_phone" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="AddressMap">
         select
-          id, user_id, address, name, phone
+          id, user_id, address, add_name, add_phone
         from address
         where id = #{id}
     </select>
@@ -21,7 +21,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="AddressMap">
         select
-          id, user_id, address, name, phone
+          id, user_id, address, add_name, add_phone
         from address
         <where>
             <if test="id != null">
@@ -34,10 +34,10 @@
                 and address = #{address}
             </if>
             <if test="name != null and name != ''">
-                and name = #{name}
+                and add_name = #{name}
             </if>
             <if test="phone != null and phone != ''">
-                and phone = #{phone}
+                and add_phone = #{phone}
             </if>
         </where>
         limit #{pageable.offset}, #{pageable.pageSize}
@@ -58,22 +58,22 @@
                 and address = #{address}
             </if>
             <if test="name != null and name != ''">
-                and name = #{name}
+                and add_name = #{name}
             </if>
             <if test="phone != null and phone != ''">
-                and phone = #{phone}
+                and add_phone = #{phone}
             </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into address(user_id, address, name, phone)
+        insert into address(user_id, address, add_name, add_phone)
         values (#{userId}, #{address}, #{name}, #{phone})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into address(user_id, address, name, phone)
+        insert into address(user_id, address, add_name, add_phone)
         values
         <foreach collection="entities" item="entity" separator=",">
         (#{entity.userId}, #{entity.address}, #{entity.name}, #{entity.phone})
@@ -81,7 +81,7 @@
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into address(user_id, address, name, phone)
+        insert into address(user_id, address, add_name, add_phone)
         values
         <foreach collection="entities" item="entity" separator=",">
             (#{entity.userId}, #{entity.address}, #{entity.name}, #{entity.phone})
@@ -89,8 +89,8 @@
         on duplicate key update
         user_id = values(user_id),
         address = values(address),
-        name = values(name),
-        phone = values(phone)
+        add_name = values(add_name),
+        add_phone = values(add_phone)
     </insert>
 
     <!--通过主键修改数据-->
@@ -104,10 +104,10 @@
                 address = #{address},
             </if>
             <if test="name != null and name != ''">
-                name = #{name},
+                add_name = #{name},
             </if>
             <if test="phone != null and phone != ''">
-                phone = #{phone},
+                add_phone = #{phone},
             </if>
         </set>
         where id = #{id}
@@ -117,6 +117,14 @@
     <delete id="deleteById">
         delete from address where id = #{id}
     </delete>
+    <!--根据userId查询-->
+    <!--List<Address> queryByUserId(Long userId);-->
+    <select id="queryByUserId" resultMap="AddressMap">
+        select
+          id, user_id, address, add_name, add_phone
+        from address
+        where user_id = #{userId}
+    </select>
 
 </mapper>
 

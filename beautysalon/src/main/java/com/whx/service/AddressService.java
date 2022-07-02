@@ -4,6 +4,8 @@ import com.whx.entity.Address;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.List;
+
 /**
  * (Address)表服务接口
  *
@@ -53,4 +55,9 @@ public interface AddressService {
      */
     boolean deleteById(Integer id);
 
+    /*
+    *
+    * 根据用户ID查询用户地址
+    * */
+    List<Address> queryAddressByUserId(Long userId);
 }

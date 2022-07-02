@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Address)表控制层
@@ -78,6 +79,15 @@ public class AddressController {
     @DeleteMapping
     public ResponseEntity<Boolean> deleteById(Integer id) {
         return ResponseEntity.ok(this.addressService.deleteById(id));
+    }
+    /*
+    *
+    * 根据userid查询用户地址
+    * */
+    @GetMapping("/queryByUserId")
+    public List<Address> queryAddressByUserId(Long userId){
+        System.out.println(userId);
+        return addressService.queryAddressByUserId(userId);
     }
 
 }

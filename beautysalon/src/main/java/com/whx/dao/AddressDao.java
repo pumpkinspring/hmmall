@@ -1,6 +1,7 @@
 package com.whx.dao;
 
 import com.whx.entity.Address;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.domain.Pageable;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2022-07-02 11:05:47
  */
+@Mapper
 public interface AddressDao {
 
     /**
@@ -79,5 +81,9 @@ public interface AddressDao {
      */
     int deleteById(Integer id);
 
+    /*
+    * 根据userId查询用户地址
+    * */
+    List<Address> queryByUserId(Long userId);
 }
 
