@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -23,6 +25,7 @@ import java.util.*;
  * @author makejava
  * @since 2022-06-21 11:34:16
  */
+@Transactional(rollbackFor =Exception.class)
 @Service("ordersService")
 public class OrdersServiceImpl implements OrdersService {
     @Resource
@@ -131,14 +134,13 @@ public class OrdersServiceImpl implements OrdersService {
                     order.setGoodsNum(cartlist.get(i).getGoodsNum());
                     order.setUserId(userid);
                     order.setGoodsSmallLogo(good.getGoodsSmallLogo());
-
                     //封装完毕 向订单表中插入
-
                     ordersDao.insert(order);
                     //修改商品表中商品的数量
                     good.setGoodsNumber(good.getGoodsNumber()-order.getGoodsNum());
                     goodsDao.update(good);
                 }
+
                 //该用户的购物车中的商品已经全部生成订单 删除该用户购物车信息
                 cartlistDao.deleteByUserId(userid);
 
@@ -146,6 +148,7 @@ public class OrdersServiceImpl implements OrdersService {
                 return new ResponseData("0", "添加订单成功");
             }catch (Exception e){
                 System.out.println(e);
+                TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
                 return  new ResponseData("9999","网络异常");
             }
     }

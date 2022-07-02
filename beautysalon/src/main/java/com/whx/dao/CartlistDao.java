@@ -4,6 +4,8 @@ import com.whx.entity.Cartlist;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.domain.Pageable;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
@@ -13,6 +15,7 @@ import java.util.List;
  * @since 2022-06-21 11:33:39
  */
 @Mapper
+@Transactional
 public interface CartlistDao {
 
     /**
